@@ -1,0 +1,12 @@
+controller:
+  ingressClass: "nginx-trial"
+  config:
+    use-forwarded-headers: "true"
+  service:
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
+    type: "ClusterIP"
+  ingress:
+    annotations:
+      kubernetes.io/ingress.class: "nginx-trial"
+    enabled: true
